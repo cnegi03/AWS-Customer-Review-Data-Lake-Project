@@ -126,25 +126,25 @@ def lambda_handler(event, context):
 # Athena SQL Queries
 **analysis_queries.sql**
 
--- View all records
+**-- View all records**
 SELECT *
 FROM customer_review_processed;
 
--- Average rating by product
+**-- Average rating by product**
 SELECT product_name,
        AVG(rating) AS average_rating
 FROM customer_review_processed
 GROUP BY product_name
 ORDER BY average_rating DESC;
 
--- Count reviews by rating
+**-- Count reviews by rating**
 SELECT rating,
        COUNT(*) AS total_reviews
 FROM customer_review_processed
 GROUP BY rating
 ORDER BY rating DESC;
 
--- Products with poor ratings
+**-- Products with poor ratings**
 SELECT product_name,
        rating,
        review_text
@@ -185,14 +185,13 @@ Run crawler.
 
 Upload:
 
-customer_review_etl.py
+**customer_review_etl.py**
 
 Job configuration:
 
 IAM Role: Glue Service Role
 Glue Version: 4.0
 Worker Type: G.1X
-
 Run ETL job.
 
 **Step 6: Create Processed Data Crawler**
@@ -208,7 +207,7 @@ Run SQL queries.
 
 **Step 8: Configure Lambda Trigger**
 
-**Create Lambda function.**
+Create Lambda function
 Add trigger:
 S3 PUT Event
 Whenever a new CSV file is uploaded, Lambda triggers Glue ETL automatically.
