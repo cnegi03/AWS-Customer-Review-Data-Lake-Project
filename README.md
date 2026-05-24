@@ -30,38 +30,6 @@ Glue Crawler catalogs transformed Parquet data.
 Athena queries transformed datasets for analytics.
 Lambda trigger ETL automation when new files arrive.
 
-# Folder Structure
-CustomerReviewDataLake/
-│
-├── README.md
-├── architecture/
-│   └── architecture-diagram.png
-│
-├── data/
-│   ├── raw/
-│   │   └── customer_reviews.csv
-│   └── transformed/
-│
-├── glue-scripts/
-│   └── customer_review_etl.py
-│
-├── athena-queries/
-│   └── analysis_queries.sql
-│
-├── lambda/
-│   └── trigger_lambda.py
-│   └── trigger_lambda.py
-│
-├── screenshots/
-│   ├── s3-bucket.png
-│   ├── glue-job.png
-│   ├── crawler.png
-│   ├── athena-query.png
-│   └── output.png
-│
-└── docs/
-    └── setup-guide.md
-
 
 # AWS Glue ETL Script
 **customer_review_etl.py**
